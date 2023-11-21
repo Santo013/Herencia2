@@ -1,0 +1,19 @@
+package Logic;
+public class Vehiculos {
+	private boolean si_o_no;
+	public Vehiculos()	{	
+	}
+	public Vehiculos(boolean si_o_no) {
+		this.setSi_o_no(si_o_no);
+	}
+	public boolean getSi_o_no() {
+		return si_o_no;
+	}
+	public void setSi_o_no(boolean si_o_no) {
+		this.si_o_no = si_o_no;
+	}
+	@Override
+	public String toString() {
+		return "¿Agregado? " + si_o_no;
+	}
+}
