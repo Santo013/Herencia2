@@ -1,0 +1,84 @@
+package UI;
+import Logic.*;
+import java.util.*;
+public class Main {
+	static Scanner sc = new Scanner(System.in);
+	private static boolean agregar;
+	private static String marca;
+	 static int opc,precio_;
+		static Vehiculos vech = new Vehiculos();
+		static Marca mrc = new Marca();
+		static Precio prec1 = new Precio();
+		private static Precio prec;
+		public static void main(String [] args) {
+		MenuAgregar();
+	}
+	
+	private static void MenuAgregar()	{
+		opc = 0;
+		do {
+		System.out.println("|-------------------------------------------|");
+		System.out.println("| Clases de vehiculos para el concesionario |");
+		System.out.println("| 1.Carro familiar                          |");
+		System.out.println("| 2.Cuatro x cuatro                         |");
+		System.out.println("| 3.Motocicleta                             |");
+		System.out.println("| 4.Salir                                   |");
+		System.out.println("|-------------------------------------------|");
+		opc = sc.nextInt();
+		switch(opc)	{
+		case 1:
+			AgregarCarro_Familiar();
+			System.out.println(vech.toString());
+			Aclarar_marca();
+			System.out.println(mrc.toString());
+			Precio();
+			break;
+		case 2:
+			Agregar4_x_4();
+			System.out.println(vech.toString());
+			Aclarar_marca();
+			System.out.println(mrc.toString());
+			Precio();
+			break;
+		case 3:
+			Agregar_moto();
+			System.out.println(vech.toString());
+			Aclarar_marca();
+			System.out.println(mrc.toString());
+			Precio();
+			break;
+		case 4:
+			sc.close();
+		}
+		}while(opc == 1 || opc == 2 || opc == 3);
+	}
+private static void AgregarCarro_Familiar() {
+	System.out.println("Agrege el vehiculo al concesionario");
+	agregar = sc.nextBoolean();
+	vech.setSi_o_no(agregar);
+}
+private static void Agregar4_x_4() {
+	System.out.println("Agrege el vehiculo al concesionario");
+	agregar = sc.nextBoolean();
+	vech.setSi_o_no(agregar);
+}
+private static void Agregar_moto() {
+	System.out.println("Agrege el vehiculo al concesionario");
+	agregar = sc.nextBoolean();
+	vech.setSi_o_no(agregar);
+}
+private static void Aclarar_marca()	{
+	System.out.println("Escriba la marca");
+	marca = sc.next();
+	mrc.setMarca_vehiculo(marca);
+}
+private static  void Precio() {
+	System.out.println("Escriba el precio estimado del vehiculo");
+	precio_ = sc.nextInt();
+	prec1.setPrecio(precio_);
+	prec1.setMarca_vehiculo(marca);
+	prec1.setSi_o_no(agregar);
+	System.out.println(prec1.toString());
+	prec = new Precio(prec1.getSi_o_no(),prec1.getMarca_vehiculo(),prec1.getPrecio());
+}
+}
