@@ -1,0 +1,20 @@
+package Logic;
+public class Marca extends Vehiculos {
+	private	String marca_vehiculo;
+	public Marca() {
+	}
+	public Marca(boolean si_o_no,String marca_vehiculo) {
+		super(si_o_no);
+		this.marca_vehiculo = marca_vehiculo;
+	}
+	public String getMarca_vehiculo() {
+		return marca_vehiculo;
+	}
+	public void setMarca_vehiculo(String marca_vehiculo) {
+		this.marca_vehiculo = marca_vehiculo;
+	}
+	@Override
+	public String toString() {
+		return super.toString()+" Marca " + marca_vehiculo;
+	}
+}
