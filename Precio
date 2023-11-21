@@ -1,0 +1,22 @@
+package Logic;
+public class Precio extends Marca{
+private int precio;
+	public Precio()	{	
+	}
+	public Precio(boolean si_o_no, String marca_vehiculo,int precio) {
+		super(si_o_no, marca_vehiculo);
+		this.precio = precio;
+	}
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
+	public int getPrecio() {
+		return precio;
+	}
+	@Override
+	public String toString() {
+		return super.toString()+" Precio " + precio;
+	}
+
+	
+}
